@@ -1,0 +1,22 @@
+pragma solidity 0.5.9;
+
+// Intro to struct to handle model
+
+contract MyContract {
+    // all variables get stored on blockchain
+    // use _ to define local variables
+    
+    // array Person
+    Person[] public people;
+
+    // modeling Person array. Like our own datastructure
+    struct Person {
+        string _first_name;
+        string _lastname;
+    }
+
+    function addPerson(string memory _firstName, string memory _lastName) public {
+        people.push(Person(_firstName, _lastName));
+    }
+
+}
