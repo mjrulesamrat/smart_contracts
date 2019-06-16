@@ -1,0 +1,25 @@
+pragma solidity 0.5.9;
+
+// Handling states using enum
+
+contract MyContract {
+    enum State {Waiting, Ready, Active}
+
+    State public state;
+
+    // initilize state with waiting State
+    constructor() public {
+        state = State.Waiting;
+    }
+
+    // update current state to Active
+    function activate() public {
+        state = State.Active;
+    }
+
+    // check if state is Active or not
+    function isActive() public view returns(bool) {
+        return state == State.Active;
+    }
+
+}
