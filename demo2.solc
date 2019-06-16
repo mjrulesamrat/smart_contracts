@@ -1,0 +1,9 @@
+pragma solidity 0.5.9;
+
+contract myStorage {
+    string public storedData = "MyValue";
+
+    function set(string memory _x) public {
+        storedData = _x;
+    }
+}
