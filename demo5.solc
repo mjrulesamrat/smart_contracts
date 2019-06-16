@@ -1,0 +1,23 @@
+pragma solidity 0.5.9;
+
+contract MyContract {
+
+    // To know the number of persons in people and fetch one
+    uint256 peopleCount = 0;
+
+    // key-store value storage data-structure
+    mapping(uint => Person) public people;
+
+    // Person object, model
+    struct Person {
+        uint _id;
+        string _firstName;
+        string _lastName;
+    }
+
+    // Add Person function with indexing
+    function addPerson(string memory _firstName, string memory _lastName) public {
+        peopleCount += 1;
+        people[peopleCount] = Person(peopleCount, _firstName, _lastName);
+    }
+}
